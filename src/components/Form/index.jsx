@@ -3,12 +3,13 @@ import '../../global.css';
 import { useState } from 'react';
 
 const Form = () => {
-    const [height, setHeight] = useState(0);
+    const [heightH, setHeightH] = useState(0);
     const [weight, setWeight] = useState(0);
     const [imc, setImc] = useState(0);
     const [classification, setClassification] = useState('');
     
     const calculate = () => {
+        const height = heightH / 100;
         const imcCalc = (weight / (height**2)).toFixed(2);
         setImc(imcCalc);
 
@@ -41,9 +42,9 @@ const Form = () => {
         <>
             <div className={styles.formContainer}>
                 <h1 className={styles.formTitle}>Vamos calcular o seu IMC</h1>
-                <label className={styles.formLabelAltura}>Digite a sua altura: </label>
-                <input onBlur={(e) => setHeight(parseFloat(e.target.value))} className={styles.formInputAltura} type="number" />
-                <label className={styles.formLabelPeso}>Digite o seu peso: </label>
+                <label className={styles.formLabelAltura}>Digite a sua altura em (cm): </label>
+                <input onBlur={(e) => setHeightH(parseFloat(e.target.value))} className={styles.formInputAltura} type="number" />
+                <label className={styles.formLabelPeso}>Digite o seu peso em (kg): </label>
                 <input onBlur={(e) => setWeight(parseFloat(e.target.value))}  className={styles.formInputPeso} type="number" />
                 <button onClick={calculate} className={styles.formButton}>Calcular</button>
                 <p className={styles.formResult}>Seu IMC é de <span>{imc}</span> e sua classificação é "<span>{classification}</span>"</p>
