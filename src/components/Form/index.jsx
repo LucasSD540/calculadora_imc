@@ -20,13 +20,13 @@ const Form = () => {
                 newClassification = 'muito abaixo do peso';
             } else if (imcCalc >= 17 && imcCalc <= 18.4) {
                 newClassification = 'abaixo do peso';
-            } else if (imcCalc >= 18.5 && imcCalc <= 24.9) {
+            } else if (imcCalc >= 18.5 && imcCalc < 25) {
                 newClassification = 'peso normal';
-            } else if (imcCalc >= 25 && imcCalc <= 29.9) {
+            } else if (imcCalc >= 25 && imcCalc < 30) {
                 newClassification = 'Acima do peso';
-            } else if (imcCalc >= 30 && imcCalc <= 34.9) {
+            } else if (imcCalc >= 30 && imcCalc < 35) {
                 newClassification = 'Obesidade grau 1';
-            } else if (imcCalc >= 35 && imcCalc <= 40) {
+            } else if (imcCalc >= 35 && imcCalc < 40) {
                 newClassification = 'Obesidade grau 2';
             } else {
                 newClassification = 'Obesidade grau 3';
